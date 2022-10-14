@@ -1,14 +1,14 @@
 pipeline{
-agent any
+  agent {label 'TERRAFORM'}
   stages{
-    stage{
-      steps{
-      git branch: 'master', url: "https://github.com/nagarjunaduggireddy/dotnet.git"
+    stage('scm') {
+      steps {
+      git branch: 'terraform', url: "https://github.com/nagarjunaduggireddy/dotnet.git"
       }
     }
     stage{
       steps{
-      sh '
+      sh 'terraform destory -auto-approve'
       }
     }
   }
