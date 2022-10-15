@@ -9,8 +9,7 @@ pipeline {
     stage('build') {
       steps {
       sh 'cd /home/ubuntu/workspace/terraform2'
-      sh 'terraform init'
-      sh 'terraform apply -auto-approve'
+      sh 'terraform destroy -auto-approve'
       }
     }
   }
