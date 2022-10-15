@@ -9,6 +9,7 @@ pipeline {
     stage('build') {
       steps {
       sh 'cd terraform'
+      sh 'terraform init'
       sh 'terraform apply -auto-approve'
       }
     }
