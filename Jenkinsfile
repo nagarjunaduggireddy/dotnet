@@ -1,5 +1,5 @@
 pipeline{
-agent any
+  agent {label 'TERRAFORM'}
   stages{
     stage{
       steps{
@@ -8,7 +8,9 @@ agent any
     }
     stage{
       steps{
-      sh '
+      sh 'mkdir terraform '
+      sh 'terraform init'
+      sh 'terraform apply -auto-approve'
       }
     }
   }
