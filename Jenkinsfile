@@ -8,9 +8,7 @@ pipeline {
     }
     stage('build') {
       steps {
-      sh 'mkdir terraform '
       sh 'cd terraform'
-      sh 'terraform init'
       sh 'terraform apply -auto-approve'
       }
     }
