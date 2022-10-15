@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
       sh 'cd /home/ubuntu/workspace/terraform2'
-      sh 'terraform apply -var-file "./my.tfvars' -auto-approve'
+      sh 'terraform apply -var-file "./my.tfvars" -auto-approve'
       }
     }
   }
