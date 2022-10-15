@@ -1,10 +1,21 @@
-provider "aws" {
-  region = "ap-south-1"
+provider "azurerm" {
+  features {}
 }
-resource "aws_s3_bucket" "arjunbucket" {
-  bucket = "arjunawss3bucket"
+resource "azurerm_resource_group" "forterraform" {
+      name     = "arjunresourcegroup"
+      location = "South India"
+      tags = {
+          Name = "myresource"
+  }
+}
+resource "azurerm_storage_account" "arjunstorageterraform" {
+  name                     = "arjunstorageterraform"
+  resource_group_name      = "arjunresourcegroup"
+  location                 = "South India"
+  account_tier             = "Standard"
+  account_replication_type = "GRS"
 
   tags = {
-    Name        = "arjuntests3"
+    environment = "arjunenv"
   }
 }
