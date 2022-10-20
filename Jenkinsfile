@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'TERRAFORM'}
+  agent {label 'DOTNET'}
   stages {
     stage('scm') {
       steps {
@@ -8,9 +8,7 @@ pipeline {
     }
     stage('build') {
       steps {
-      sh 'cd /home/ubuntu/workspace/terraform2'
-      sh 'terraform apply -var-file="my.tfvars" -auto-approve'
-      // sh 'terraform destroy -var-file="my.tfvars" -auto-approve'
+     SH 
       }
     }
   }
